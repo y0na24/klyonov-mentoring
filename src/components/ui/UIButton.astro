@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {}
+---
+
+<button
+  type="button"
+  class:list={[
+    "py-3 px-4 inline-flex items-center gap-x-2 font-medium rounded-lg border border-transparent bg-red-500 text-white focus:outline-none transition-colors disabled:opacity-50 disabled:pointer-events-none",
+    Astro.props.class,
+  ]}
+  {...Astro.props}
+>
+  <slot />
+  <slot name="icon" />
+</button>

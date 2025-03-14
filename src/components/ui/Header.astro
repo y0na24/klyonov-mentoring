@@ -1,0 +1,68 @@
+---
+import logo from '../../assets/logo.svg'
+import { Image } from 'astro:assets'
+import UIButton from './UIButton.astro'
+import Navigation from './Navigation.astro'
+import Sidebar from './Sidebar.astro'
+---
+
+<header class="container flex justify-between border-b pt-5 pb-2 mb-[42px]">
+  <Image src={logo} alt="Логотип" />
+  <div class="flex items-center gap-5">
+    <Navigation class="hidden lg:block" />
+    <UIButton class="text hover:bg-red-600 px-3 py-[10px]">Записаться</UIButton>
+
+    <button id="burger-button" class="lg:hidden">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<Sidebar />
+
+<script>
+  const burgerButton = document.getElementById('burger-button')!
+  const mobileMenu = document.getElementById('mobile-menu')!
+  const mobileMenuContent = mobileMenu.querySelector('div')!
+
+  burgerButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('opacity-0')
+    mobileMenu.classList.toggle('invisible')
+    mobileMenuContent.classList.toggle('-translate-x-full')
+    document.body.classList.add('overflow-hidden')
+  })
+
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      mobileMenu.classList.add('opacity-0', 'invisible')
+      mobileMenuContent.classList.add('-translate-x-full')
+      document.body.classList.remove('overflow-hidden')
+    }
+  })
+
+  const closeButton = document.getElementById('close-button')!
+
+  closeButton.addEventListener('click', () => {
+    mobileMenu.classList.add('opacity-0', 'invisible')
+    mobileMenuContent.classList.add('-translate-x-full')
+    document.body.classList.remove('overflow-hidden')
+  })
+</script>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

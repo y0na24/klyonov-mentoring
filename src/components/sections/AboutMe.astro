@@ -1,0 +1,84 @@
+---
+import DescriptionCard from '../ui/DescriptionCard.astro'
+import GridContainer from '../ui/GridContainer.astro'
+import Stepper from '../ui/Stepper.astro'
+import UIButton from '../ui/UIButton.astro'
+import Widget from '../ui/Widget.astro'
+
+import arrow from '../../assets/arrow-right.svg'
+import file from '../../assets/file.svg'
+import { Image } from 'astro:assets'
+
+const stack = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Redux',
+  'Zustand',
+  'Mobx',
+  'Webpack',
+  'Vite',
+  'Git'
+]
+
+const description =
+  'Привет! Меня зовут Матвей, и я Frontend-разработчик в ВТБ Банке. Мой путь в IT начался с нуля, и сейчас я помогаю другим разработчикам разбираться в сложных темах, рассказывая о них просто и доступно. На моем YouTube-канале я делюсь практическими знаниями, лайфхаками и своим опытом работы в одной из крупнейших IT-команд страны.'
+---
+
+<section id="aboutMe" class="aboutMe container">
+  <GridContainer>
+    <DescriptionCard
+      header="Обо мне"
+      title="Senior Frontend-разработчик"
+      description={description}
+      slot="aboutMe"
+    />
+    <Stepper slot="exp" />
+    <Widget slot="myself" />
+    <Widget
+      class="bg-red-500"
+      containerClass="flex flex-col justify-center items-center"
+      slot="consultation"
+    >
+      <h2 slot="title" class="subtitle text-white text-center mb-4">
+        Запишись на бесплатную консультацию
+      </h2>
+      <p
+        slot="description"
+        class="mt-1 text text-center text-white opacity-80 mb-8 dark:text-neutral-400"
+      >
+        Ты сможешь задать любые вопросы, которые тебя интересуют
+      </p>
+      <UIButton
+        slot="action"
+        class="bg-white !text-red-500 disabled:hover:bg-red-500"
+        >Связаться со мной
+        <Image class="w-4 h-4" src={arrow} alt="Связаться со мной" />
+      </UIButton>
+    </Widget>
+    <div
+      slot="stack"
+      class="flex flex-col w-full h-full bg-white border hover:shadow-lg transition shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
+    >
+      <div
+        class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700"
+      >
+        <p class="mt-1 text text-gray-500 dark:text-neutral-500">Стэк</p>
+      </div>
+      <ul
+        class="p-4 lg:p-5 flex flex-row justify-center flex-wrap lg:flex-col gap-3"
+      >
+        {
+          stack.map((n) => (
+            <li class="flex gap-1 items-center">
+              <Image src={file} alt={n} />
+              <span class="text">{n}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </GridContainer>
+</section>

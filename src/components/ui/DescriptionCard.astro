@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  header: string;
+  title: string;
+  description: string;
+}
+
+const { header, title, description } = Astro.props;
+---
+
+<div
+  class="flex flex-col w-full h-full bg-white border hover:shadow-lg transition shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
+>
+  <div
+    class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700"
+  >
+    <p class="mt-1 text text-gray-500 dark:text-neutral-500">{header}</p>
+  </div>
+  <div class="p-4 md:p-5">
+    <h3 class="subtitle mb-4 font-bold text-gray-800 dark:text-white">{title}</h3>
+    <p class="mt-1 text text-gray-500 dark:text-neutral-400">
+      {description}
+    </p>
+  </div>
+</div>

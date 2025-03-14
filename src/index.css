@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  padding-inline: 15px;
+}
+
+.container {
+  max-width: 1636px;
+  margin-inline: auto;
+}
+
+.navlink {
+  @apply text-lg text-end md:text-2xl lg:text-base lg:transition-colors text--hover;
+}
+
+.title {
+  @apply text-4xl lg:text-5xl;
+}
+
+.text {
+  @apply text-base transition-colors;
+}
+
+.text--hover:hover {
+  @apply text-red-600;
+}
+
+.subtitle {
+  @apply text-3xl;
+}

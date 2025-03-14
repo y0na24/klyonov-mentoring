@@ -1,0 +1,119 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {}
+---
+
+<div
+  class:list={[
+    "flex flex-col w-full h-full bg-white border shadow-sm hover:shadow-lg transition rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70",
+    Astro.props.class,
+  ]}
+  {...Astro.props}
+>
+  <div
+    class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700"
+  >
+    <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">Опыт работы</p>
+  </div>
+  <div class="md:p-5">
+    <ul class="px-9 relative flex gap-x-2 w-full">
+      <li class="shrink basis-16 flex-1 group">
+        <div
+          class="min-w-7 min-h-7 w-full inline-flex items-center text-xs align-middle"
+        >
+          <span
+            class="size-7 stepper--green text-white flex justify-center items-center shrink-0 bg-gray-100 font-medium rounded-full dark:bg-neutral-700 dark:text-white"
+          >
+            1
+          </span>
+          <div
+            class="ms-2 w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-neutral-700"
+          >
+          </div>
+        </div>
+        <div class="grow md:grow-0 md:mt-3 pb-5">
+          <span class="block text-sm font-medium text-gray-800 dark:text-white"
+            >Сбер</span
+          >
+          <p
+            class="text-sm translate-x-[-2.3px] text-gray-500 dark:text-neutral-500"
+          >
+            Middle 3 месяца
+          </p>
+        </div>
+      </li>
+
+      <li class="shrink basis-16 flex-1 group">
+        <div
+          class="min-w-7 min-h-7 w-full inline-flex items-center text-xs align-middle"
+        >
+          <span
+            class="size-7 flex justify-center items-center stepper--blue shrink-0 bg-gray-100 font-medium text-white rounded-full dark:bg-neutral-700 dark:text-white"
+          >
+            2
+          </span>
+          <div
+            class="ms-2 w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-neutral-700"
+          >
+          </div>
+        </div>
+        <div class="grow md:grow-0 md:mt-3 pb-5">
+          <span class="block text-sm font-medium text-gray-800 dark:text-white"
+            >ВТБ</span
+          >
+          <p
+            class="text-sm translate-x-[-7px] text-gray-500 dark:text-neutral-500"
+          >
+            Middle+ 9 месяцев <br />
+          </p>
+        </div>
+      </li>
+
+      <li class="group">
+        <div
+          class="min-w-7 min-h-7 w-full inline-flex items-center text-xs align-middle"
+        >
+          <span
+            class="size-7 flex justify-center items-center stepper--blue shrink-0 bg-gray-100 font-medium text-white rounded-full dark:bg-neutral-700 dark:text-white"
+          >
+            3
+          </span>
+          <div
+            class="ms-2 w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-neutral-700"
+          >
+          </div>
+        </div>
+        <div class="grow md:grow-0 md:mt-3 pb-5">
+          <span class="block text-sm font-medium text-gray-800 dark:text-white"
+            >ВТБ</span
+          >
+          <p
+            class="text-sm translate-x-[-5px] text-gray-500 dark:text-neutral-500"
+          >
+            Senior <br />
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .stepper--green {
+    background: linear-gradient(
+      214.79deg,
+      rgb(0, 157, 236) 14.167%,
+      rgb(0, 213, 111) 45.667%,
+      rgb(253, 244, 1) 82.971%
+    );
+  }
+
+  .stepper--blue {
+    background: linear-gradient(
+      214.79deg,
+      rgb(136, 32, 253) 14.167%,
+      rgb(5, 112, 253) 48.569%
+    );
+  }
+</style>

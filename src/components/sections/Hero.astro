@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+import UIButton from '../ui/UIButton.astro'
+import Widget from '../ui/Widget.astro'
+
+import me from '../../assets/me.jpg'
+---
+
+<section class="hero container">
+  <div class="flex flex-col lg:flex-row gap-[30px] mb-10">
+    <Widget containerClass="flex flex-col justify-center gap-8 h-full">
+      <h1 class="title" slot="title">Менторинг по Frontend-разработке</h1>
+      <p class="text-grey text-lg lg:text-xl" slot="description">
+        Достигни уровня Middle Frontend-разработчика <br /> и выйди на доход от 150 000
+        рублей. <br /> Новичок или уже в IT — помогу достичь твоих целей!
+      </p>
+      <UIButton
+        class="text-[15px] lg:text-xl hover:bg-red-600 self-start"
+        slot="action">Связаться со мной</UIButton
+      >
+    </Widget>
+    <Image
+      class="rounded-xl lg:min-w-[524px] object-cover max-h-[344px] w-auto"
+      src={me}
+      alt="Матвей Клёнов"
+      style={{
+        objectPosition: '50% 28%'
+      }}
+    />
+  </div>
+  <!-- <div class="flex gap-8 mb-32">
+    <DescriptionCard title="Пик" header="Шапка" description="дескрипшн" />
+    <DescriptionCard title="Пик" header="Шапка" description="дескрипшн" />
+    <DescriptionCard title="Пик" header="Шапка" description="дескрипшн" />
+    <DescriptionCard title="Пик" header="Шапка" description="дескрипшн" />
+  </div> -->
+</section>

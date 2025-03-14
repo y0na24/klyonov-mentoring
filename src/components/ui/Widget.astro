@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  containerClass?: string;
+}
+---
+
+<div
+  class:list={[
+    "min-h-60 w-full flex p-[42px] flex-col border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70",
+    Astro.props.class,
+  ]}
+  {...Astro.props}
+>
+  <div class={Astro.props.containerClass}>
+    <slot name="title" />
+    <slot name="description" />
+    <slot name="action" />
+  </div>
+</div>
