@@ -13,6 +13,7 @@ body {
   font-weight: 500;
   font-style: normal;
   padding-inline: 15px;
+  letter-spacing: 0.5%;
 }
 
 .container {
@@ -25,11 +26,12 @@ body {
 }
 
 .title {
-  @apply text-4xl lg:text-5xl;
+  letter-spacing: 0.5%;
+  @apply text-2xl md:text-4xl lg:text-5xl;
 }
 
 .text {
-  @apply text-base transition-colors;
+  @apply text-sm md:text-base transition-colors;
 }
 
 .text--hover:hover {
@@ -37,5 +39,5 @@ body {
 }
 
 .subtitle {
-  @apply text-3xl;
+  @apply text-xl md:text-2xl lg:text-3xl;
 }

@@ -1,0 +1,33 @@
+---
+import ScrollSpy from '../ui/ScrollSpy.astro'
+import UIButton from '../ui/UIButton.astro'
+import programDecor from '../../assets/programDecor.svg'
+import { Image } from 'astro:assets'
+
+interface Props {
+  className?: string
+}
+
+const { className, ...props } = Astro.props
+---
+
+<section class:list={['relative', className]} {...props}>
+  <div class="container flex flex-col md:flex-row gap-5 relative">
+    <div class="basis-[40%]">
+      <h2 class="title mb-4">Программа обучения</h2>
+      <p class="text text-grey mb-6">
+        Я составил эффективную программу обучения, которая позволит тебе освоить
+        нужные навыки до уровня Middle. Будет много практики: решение задач и
+        написание проектов максимально адаптированных под реальную работу, что
+        даст тебе преимущество на рынке труда.
+      </p>
+      <UIButton class="mb-8 mr-auto">Хочу обучаться</UIButton>
+    </div>
+    <ScrollSpy />
+  </div>
+  <Image
+    class="hidden 2xl:block absolute bottom-[-20px] w-full z-[-1]"
+    src={programDecor}
+    alt=""
+  />
+</section>

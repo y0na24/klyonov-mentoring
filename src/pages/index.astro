@@ -1,10 +1,20 @@
 ---
-import Hero from "../components/sections/Hero.astro";
-import AboutMe from "../components/sections/AboutMe.astro";
-import Layout from "../layouts/Layout.astro";
+import Hero from '../components/sections/Hero.astro'
+import AboutMe from '../components/sections/AboutMe.astro'
+import Layout from '../layouts/Layout.astro'
+import Program from '../components/sections/Program.astro'
+import Advantages from '../components/sections/Advantages.astro'
 ---
 
 <Layout>
   <Hero />
-  <AboutMe />
+  <AboutMe className="section" />
+  <Program className="section" />
+  <Advantages />
 </Layout>
+
+<style>
+  .section {
+    @apply mb-20 md:mb-24 lg:mb-32;
+  }
+</style>

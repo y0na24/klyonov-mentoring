@@ -8,9 +8,9 @@ import me from '../../assets/me.jpg'
 
 <section class="hero container">
   <div class="flex flex-col lg:flex-row gap-[30px] mb-10">
-    <Widget containerClass="flex flex-col justify-center gap-8 h-full">
+    <Widget containerClass="flex flex-col justify-center gap-4 lg:gap-8 h-full">
       <h1 class="title" slot="title">Менторинг по Frontend-разработке</h1>
-      <p class="text-grey text-lg lg:text-xl" slot="description">
+      <p class="text-grey text-base lg:text-xl" slot="description">
         Достигни уровня Middle Frontend-разработчика <br /> и выйди на доход от 150 000
         рублей. <br /> Новичок или уже в IT — помогу достичь твоих целей!
       </p>
@@ -20,7 +20,7 @@ import me from '../../assets/me.jpg'
       >
     </Widget>
     <Image
-      class="rounded-xl lg:min-w-[524px] object-cover max-h-[344px] w-auto"
+      class="rounded-xl lg:min-w-[524px] object-cover sm:hidden lg:block max-h-[344px] w-auto"
       src={me}
       alt="Матвей Клёнов"
       style={{

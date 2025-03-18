@@ -1,0 +1,178 @@
+---
+import { Image } from 'astro:assets'
+
+import htmlIcon from '../../assets/htmlicon.svg'
+import cssIcon from '../../assets/cssIcon.svg'
+import jsLogo from '../../assets/jsLogo.svg'
+import tsLogo from '../../assets/typescript.svg'
+import reactLogo from '../../assets/react.svg'
+import redux from '../../assets/redux.svg'
+import webpack from '../../assets/webpack.svg'
+import interview from '../../assets/interview.svg'
+---
+
+<div
+  id="hs-scrollspy-scrollable-parent-example"
+  class="flex-1 border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 max-h-96 overflow-y-auto overflow-hidden bg-white pb-4 px-6"
+>
+  <div class="pt-5" id="hs-scrollspy-example">
+    <div id="first" class="collapse-item">
+      <div class="flex self-start w-[65px] mb-1">
+        <Image width={32} height={32} src={htmlIcon} alt="Логотип HTML" />
+        <Image width={32} height={32} src={cssIcon} alt="Логотип CSS" />
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
+          HTML & CSS
+        </h3>
+        <p class="mt-1 text-sm/6 text-gray-600 dark:text-neutral-500">
+          Первым делом мы изучим HTML и CSS, сверстаем первые сайты и научимся
+          выкладывать их в сеть.
+        </p>
+      </div>
+    </div>
+
+    <div id="second" class="collapse-item">
+      <div class="flex self-start w-[65px] mb-1">
+        <Image
+          class="mr-1"
+          width={32}
+          height={32}
+          src={jsLogo}
+          alt="Логотип JavaScript"
+        />
+        <Image width={32} height={32} src={tsLogo} alt="Логотип TypeScript" />
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
+          JavaScript & TypeScript
+        </h3>
+        <p class="mt-1 text-sm/6 text-gray-600 dark:text-neutral-500">
+          JavaScript - язык программирования, который позволяет добавлять
+          функциональность на страницу. Будем решать задачи с реальных
+          собеседований, изучать нужную теорию без воды, что ускорит обучение.
+          <br />
+          <br />
+          TypeScript - надстройка над JavaScript, которая добавляет статическую типизацию
+          для обеспечение безопасности приложений.
+        </p>
+      </div>
+    </div>
+
+    <div id="third" class="collapse-item">
+      <div class="flex self-start w-[65px] mb-1">
+        <Image width={36} height={36} src={reactLogo} alt="Логотип React" />
+        <Image width={32} height={32} src={redux} alt="Логотип Redux" />
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
+          React & Redux
+        </h3>
+        <p class="mt-1 text-sm/6 text-gray-600 dark:text-neutral-500">
+          React - самая популярная библиотека для разработки интерфейсов,
+          которая используется в больших компаниях. <br />
+          <br />
+          Redux - менеджер состояний, который используется для реализации сложных
+          приложений.
+          <br />
+          <br />
+          На данном этапе будет больше всего практики. Обратим внимание на продвинутые
+          концепции, чтобы выделяться на фоне других кандидатов.
+        </p>
+      </div>
+    </div>
+    <div id="fourth" class="collapse-item">
+      <div class="flex self-start justify-start w-[65px]">
+        <Image width={36} height={36} src={webpack} alt="Логотип Webpack" />
+      </div>
+      <div>
+        <h3
+          class="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-1"
+        >
+          Инфраструктура
+        </h3>
+        <p class="mt-1 text-sm/6 text-gray-600 dark:text-neutral-500">
+          Инфраструктура - важная часть коммерческой разработки. Вы научитесь
+          настраивать Webpack, Eslint и Prettier, что позволит поддерживать
+          единообразие и качество разработки.
+        </p>
+      </div>
+    </div>
+    <div id="fifth" class="collapse-item">
+      <div class="flex self-start justify-start w-[65px]">
+        <Image
+          width={36}
+          height={36}
+          src={interview}
+          alt="Подготовка к собеседованию"
+        />
+      </div>
+      <div>
+        <h3
+          class="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-1"
+        >
+          Подготовка к собеседованию
+        </h3>
+        <p class="mt-1 text-sm/6 text-gray-600 dark:text-neutral-500">
+          Тебе будет дана база знаний вопросов с реалных собеседовний и задачи,
+          которые требуется прорешать для выхода на рынок. Я буду проводить
+          тренировочные собеседования, чтобы ты точно был готов.
+          <br />
+          Далее оформляется конверсионное резюме и мы начинаем активно искать работу.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .collapse-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .collapse-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+</style>
+
+<script>
+  import {
+    HSScrollspy,
+    HSCollapse,
+    type ICollectionItem,
+    HSStaticMethods
+  } from 'preline'
+
+  const scrollSpy = document.querySelector(
+    '[data-hs-scrollspy="#scrollspy-example"]'
+  ) as HTMLElement
+
+  const navbar = document.querySelector(
+    '[data-hs-collapse="#navbar-collapse-example"]'
+  ) as HTMLElement
+
+  const el = HSScrollspy.getInstance(
+    scrollSpy,
+    true
+  ) as ICollectionItem<HSScrollspy>
+  const collapse = HSCollapse.getInstance(
+    navbar,
+    true
+  ) as ICollectionItem<HSCollapse>
+
+  el.element.on('beforeScroll', () => {
+    return new Promise((res) => {
+      if (
+        collapse.element.content &&
+        collapse?.element.el.classList.contains('open')
+      ) {
+        collapse.element.hide()
+        HSStaticMethods.afterTransition(collapse.element.content, () =>
+          res(true)
+        )
+      } else {
+        res(true)
+      }
+    })
+  })
+</script>

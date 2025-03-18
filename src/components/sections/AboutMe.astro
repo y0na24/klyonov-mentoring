@@ -9,6 +9,10 @@ import arrow from '../../assets/arrow-right.svg'
 import file from '../../assets/file.svg'
 import { Image } from 'astro:assets'
 
+interface Props {
+  className?: string
+}
+
 const stack = [
   'HTML',
   'CSS',
@@ -25,9 +29,16 @@ const stack = [
 
 const description =
   'Привет! Меня зовут Матвей, и я Frontend-разработчик в ВТБ Банке. Мой путь в IT начался с нуля, и сейчас я помогаю другим разработчикам разбираться в сложных темах, рассказывая о них просто и доступно. На моем YouTube-канале я делюсь практическими знаниями, лайфхаками и своим опытом работы в одной из крупнейших IT-команд страны.'
+
+const { className, ...props } = Astro.props
 ---
 
-<section id="aboutMe" class="aboutMe container">
+<section
+  class:list={[className, 'aboutMe container']}
+  id="aboutMe"
+  class=""
+  {...props}
+>
   <GridContainer>
     <DescriptionCard
       header="Обо мне"
@@ -36,7 +47,6 @@ const description =
       slot="aboutMe"
     />
     <Stepper slot="exp" />
-    <Widget slot="myself" />
     <Widget
       class="bg-red-500"
       containerClass="flex flex-col justify-center items-center"
