@@ -1,3 +1,55 @@
+---
+import { Image } from 'astro:assets'
+import Card from '../ui/Card.astro'
+
+import mess from '../../assets/message.svg'
+import handshake from '../../assets/handshake.svg'
+import projects from '../../assets/projects.svg'
+---
+
 <section class="container">
-  <h2 class="title">Преимущества обучения со мной</h2>
+  <h2 class="title mb-6 sm:mb-[42px] md:mb[56px]">
+    Преимущества обучения со мной
+  </h2>
+  <div class="flex flex-col gap-6 lg:flex-row md:gap-[28px]">
+    <Card
+      title="Подготовка к работе со старта"
+      description="Процесс обучения будет максимально адаптирован под навыки нужные на работе. Мы будем прорешивать задачи с реальных собеседований. Писать проекты с подходами, которые испольуются в больших компаниях."
+    >
+      <Image
+        class="mb-6"
+        width={32}
+        height={32}
+        slot="icon"
+        src={mess}
+        alt="Иконка"
+      />
+    </Card>
+    <Card
+      title="Поддержка на всех этапах"
+      description="Вы не останетесь один на один с проблемами! Я всегда рядом, готов ответить на вопросы, помочь с трудными моментами и направить вас в нужное русло. В любом вопросе вы можете рассчитывать на мою поддержку, будь то теория или практика."
+    >
+      <Image
+        class="mb-6"
+        width={32}
+        height={32}
+        slot="icon"
+        src={handshake}
+        alt="Иконка"
+      />
+    </Card>
+    <Card
+      title="Разбор проектов"
+      description=" Проекты, которые вы будете реализовывать, охватывают все необходимые навыки для реальной работы. Во время проверки кода я объясняю правильные концепции разработки, что делает обучение более эффективным и помогает глубже понять материал."
+    >
+      <Image
+        class="mb-6"
+        width={32}
+        height={32}
+        slot="icon"
+        src={projects}
+        alt="Иконка"
+      />
+    </Card>
+  </div>
 </section>
